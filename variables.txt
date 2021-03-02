@@ -1,0 +1,46 @@
+##### ATTENTION #######
+#### If you set yes the option to create some item
+#### and the item already exist, it will be overwritten
+#######################
+
+#Should Create Resource Group ?
+RG_CREATE="yes"
+
+#Resource group name
+TF_VAR_RESOURCE_GROUP_NAME="RgHadoopol"
+
+#Resource group region
+#If you are unsure, type the command: az account list-locations
+#to get a list with valid regions names
+TF_VAR_RESOURCE_GROUP_REGION="westus"
+
+#Should Create ftp storage account ?
+ST_AC="yes"
+
+#Storage account name
+TF_VAR_STORAGE_ACCOUNT_NAME="stgaccounthadoopol"
+
+#Storage key. Specify the key only if you have already created the storage account
+#or if you set ST_AC=no
+STORAGE_KEY=""
+
+#Should Create storage container ?
+ST_C="yes"
+
+#Storage Container Name
+TF_VAR_STORAGE_CONTAINER_NAME="ftpstoragecontainer"
+
+#Should Create storage blob ?
+ST_B="yes"
+
+#Storage Blob Name
+TF_VAR_STORAGE_BLOB_NAME="ftpstorageblob"
+
+#List of ftp user:password to be created inside docker container
+FTP_USERS="myuser:abc123"
+
+#Virtual machine username administrator
+#A public id_rsa.pub and private key id_rsa is generated at script execution time.
+#You can login to VM using this user + the key automatically generated
+TF_VAR_VM_ADMIN_USERNAME="hadoopol"
+#### By default ssh port 22 is not open and sshd service is disable on the VM
